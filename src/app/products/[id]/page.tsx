@@ -6,11 +6,11 @@ type Props = {
   params: { id: string }
 }
 
-export default function ProductDetails({ params }: Props) {
-    const product = getProduct(params.id)
+export default async function ProductDetails({ params }: Props) {
+    const product = await getProduct(params.id)
 
     return (
-        <div>
+        <div className="border-zinc-500 bg-zinc-700 h-56 w-56">
             <h1>{product?.name}</h1>
             <p>{product?.description}</p>
             <p>€ {product?.price},00</p>
